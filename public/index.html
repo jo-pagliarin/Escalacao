@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="controllers/userController.js"></script>
+    <title>Escalação</title>
+</head>
+<body>
+    <h1><center>Escalação</center></h1>
+
+    <section name="cadastro_de_jogador">
+    <h2><center>Cadastro de Jogador</center></h2>
+    <form action="/api/postarDadosJogador"><center>
+        <label>Nome:</label>
+        <input id="nome" type="text" name="nome">
+        <label>Idade:</label>
+        <input id="idade" type="number" name="idade"><br><br>
+        <label><strong>Posição</strong></label><br>
+        <input type="checkbox" name="posicao" value="goleiro"> Goleiro
+        <input type="checkbox" name="posicao" value="zagueiro"> Zagueiro
+        <input type="checkbox" name="posicao" value="lateral"> Lateral        
+        <input type="checkbox" name="posicao" value="meio_campo"> Meio-campo
+        <input type="checkbox" name="posicao" value="atacante"> Atacante<br><br>
+        <label>Número da Camisa:</label>
+        <input id="num_camisa" type="number" name="num_camisa">
+        <label>Clube:</label>
+        <select id="nome_clube" name="nome_clube">
+            <option value="1">Palmeiras</option>
+            <option value="2">Fluminense</option>
+            <option value="3">Corinthians</option>
+            <option value="4">Fortaleza</option>
+            <option value="5">Coritiba</option>
+        </select>
+        <br><br>
+        <button id="enviar">Enviar</button>        
+    </form>
+    </section>
+
+    <section name="navegar_pelo_clube">
+    <h2><center>Navegar pelo clube</center></h2>
+    <form action="/api/pesquisarClube"><center>
+        <label>Clube:</label>
+        <select id="nome_clube" name="nome_clube">
+            <option value="1">Palmeiras</option>
+            <option value="2">Fluminense</option>
+            <option value="3">Corinthians</option>
+            <option value="4">Fortaleza</option>
+            <option value="5">Coritiba</option>
+        </select>
+        <button>Enviar</button></center>
+    </form>
+    </section>
+
+    <section name="deletar_jogador">
+        <h2><center>Deletar jogador</center></h2>
+        <form id="forms" action="/api/deletarJogador"><center>
+            <label>Nome do jogador a ser deletado:</label>
+            <input type="text" name="nome">
+            <button>Enviar</button></center>
+        </form>
+    </section>
+</body>
+</html>
+
