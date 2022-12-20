@@ -1,0 +1,90 @@
+* {
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: rgb(187, 186, 186);
+    background-image: url('Fut.png');
+    background-repeat: no-repeat;
+    background-size: 14%;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-attachment: fixed;
+}
+
+hr {
+    width: 100%;
+    opacity: 85%;
+}
+
+button {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: #790e02 0.1em 0.1em 0.3em;
+}
+
+button:hover {
+    background-color: rgb(131, 58, 180);
+    background: linear-gradient(45deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.l {
+    margin-right: 5px;
+    display: inline-block;
+    width: 60vh;
+}
+
+.l2 {
+    margin-right: 5px;
+    display: inline-block;
+    width: 60vh;
+    color: red;
+}
+
+.container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.box {
+    width: 40%;
+}
+
+.checks {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border: 2px solid;
+    border-color: orange;
+    width: 70%;
+    border-collapse: collapse;
+    margin-left: 30vh;
+ }
+
+ th{
+    border: 2px solid;
+    border-color: red;
+ }
+
+ td{
+    text-align: center;
+    border: 2px solid;
+    border-color: red;
+    color: orangered;
+ }
+
+ .mensagem{
+    text-align: center;
+ }

@@ -4,63 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="controllers/userController.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="style.css" rel='stylesheet'>
     <title>Escalação</title>
 </head>
 <body>
-    <h1><center>Escalação</center></h1>
-
-    <section name="cadastro_de_jogador">
-    <h2><center>Cadastro de Jogador</center></h2>
-    <form action="/api/postarDadosJogador"><center>
-        <label>Nome:</label>
-        <input id="nome" type="text" name="nome">
-        <label>Idade:</label>
-        <input id="idade" type="number" name="idade"><br><br>
-        <label><strong>Posição</strong></label><br>
-        <input type="checkbox" name="posicao" value="goleiro"> Goleiro
-        <input type="checkbox" name="posicao" value="zagueiro"> Zagueiro
-        <input type="checkbox" name="posicao" value="lateral"> Lateral        
-        <input type="checkbox" name="posicao" value="meio_campo"> Meio-campo
-        <input type="checkbox" name="posicao" value="atacante"> Atacante<br><br>
-        <label>Número da Camisa:</label>
-        <input id="num_camisa" type="number" name="num_camisa">
-        <label>Clube:</label>
-        <select id="nome_clube" name="nome_clube">
+    <div class="container">
+        <section name="cadastro_de_jogador">
+        <h1 style="text-align: center; margin-top: 80px;">Escalação</h1><br><br>
+        <label class="l">Nome:</label>
+        <input id="nome" type="text" name="nome" class="box" placeholder="Cadastrar atleta">
+        <hr>
+        <label class="l">Idade:</label>
+        <input id="idade" type="number" name="idade" class="box">
+        <hr>
+        <div>
+            <label class="l">Posição:</label>
+            <label>Goleiro</label><input type="checkbox" name="posicao" value="goleiro" style="margin-right: 4vh;"> 
+            <label>Zagueiro</label><input type="checkbox" name="posicao" value="zagueiro" style="margin-right: 4vh;">
+            <label>Lateral</label><input type="checkbox" name="posicao" value="lateral" style="margin-right: 4vh;">   
+            <label>Meio-campo</label><input type="checkbox" name="posicao" value="meio_campo" style="margin-right: 4vh;"> 
+            <label>Atacante</label><input type="checkbox" name="posicao" value="atacante" style="margin-right: 4vh;">
+        </div> 
+        <hr>
+        <label class="l">Número da Camisa:</label>
+        <input id="num_camisa" type="number" class="box">
+        <hr>
+        <label class="l">Clube:</label>
+        <select id="nome_clube" style="width:40.8%;border:1px solid #ff0000" class="box">
+            <option>Selecione</option>
             <option value="1">Palmeiras</option>
             <option value="2">Fluminense</option>
             <option value="3">Corinthians</option>
             <option value="4">Fortaleza</option>
             <option value="5">Coritiba</option>
-        </select>
-        <br><br>
-        <button id="enviar">Enviar</button>        
-    </form>
-    </section>
+        </select><br><br>
+        <button id="enviarJogador">Salvar</button>  
+        <p id="mensagem-post-jogador" class="mensagem"></p><br><br>   
+        <hr>
+        </section>
+     
+        <section name="navegar_pelo_clube">
+            <label class="l2">Pesquisar Clube:</label>
+            <select id="busca_clube" class="box" >
+                <option value="1">Palmeiras</option>
+                <option value="2">Fluminense</option>
+                <option value="3">Corinthians</option>
+                <option value="4">Fortaleza</option>
+                <option value="5">Coritiba</option>
+            </select><br><br>
+            <button id="navegar" style="background-color:red">Mostrar jogadores</button><br>
+            <table id="table">
+                <tr style="color:red">
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Posição</th>
+                    <th>Número da camisa</th>
+                </tr>
+            </table>
+        </section><br><br><hr>
 
-    <section name="navegar_pelo_clube">
-    <h2><center>Navegar pelo clube</center></h2>
-    <form action="/api/pesquisarClube"><center>
-        <label>Clube:</label>
-        <select id="nome_clube" name="nome_clube">
-            <option value="1">Palmeiras</option>
-            <option value="2">Fluminense</option>
-            <option value="3">Corinthians</option>
-            <option value="4">Fortaleza</option>
-            <option value="5">Coritiba</option>
-        </select>
-        <button>Enviar</button></center>
-    </form>
-    </section>
+        <section name="deletar_jogador">        
+                <label class="l">Excluir jogador:</label class="l">
+                <input placeholder="Nome do jogador" id="nome_jogador_delete" type="text" class="box"><br><br>
+                <button id="deletar">Deletar</button>
+                <p id="mensagem-deletar-jogador" class="mensagem"></p>
+        </section>
 
-    <section name="deletar_jogador">
-        <h2><center>Deletar jogador</center></h2>
-        <form id="forms" action="/api/deletarJogador"><center>
-            <label>Nome do jogador a ser deletado:</label>
-            <input type="text" name="nome">
-            <button>Enviar</button></center>
-        </form>
-    </section>
+    </div>
+    <script src=".\script.js"></script>
 </body>
 </html>
 
