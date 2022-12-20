@@ -33,6 +33,7 @@ const novoJogador = async () => {
 }
 
 async function novaLista (){
+
     const id_clube = parseInt(document.getElementById("busca_clube").value)
     const body = {
         id_clube: id_clube,
@@ -50,6 +51,8 @@ async function novaLista (){
     const dados = await response.json()
 
     var table = document.getElementById("table")
+    table.innerHTML = ''
+    
     dados.forEach(function(pessoa){
         var row = table.insertRow(-1)
         var cell1 = row.insertCell(0) 
@@ -57,11 +60,12 @@ async function novaLista (){
         var cell3 = row.insertCell(2)
         var cell4 = row.insertCell(3)
         cell1.innerHTML = pessoa.nome
-        cell2.innerHTML = pessoa.idade
+        cell2.innerHTML = `Idade: ${pessoa.idade}`
         cell3.innerHTML = pessoa.posicao
-        cell4.innerHTML = pessoa.num_camisa
+        cell4.innerHTML = `Camisa: ${pessoa.num_camisa}`
     })
 
+    
 }
 
 const deletarJogador = async () => {
